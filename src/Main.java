@@ -41,6 +41,7 @@ public class Main {
 //        В таком случае в консоли выведется результат "2", то есть то количество элементов, которые повторяются.*
         List<String> words4 = new ArrayList<>(List.of("aaa", "bbb", "aaa","aaa", "ddd" , "ccc", "ccc", "aaa", "aaa"));
         Map<String, Integer> numberOfDuplicate = new HashMap<>();
+        List<Integer> duplicates = new ArrayList<>();
         for (String word:
              words4) {
             if (numberOfDuplicate.containsKey(word)) {
@@ -49,12 +50,12 @@ public class Main {
                 numberOfDuplicate.put(word, 1);
             }
         }
-        for (Integer num :
-             numberOfDuplicate.values()) {
-            if (numberOfDuplicate.get(num) > 1) {
-                System.out.println(numberOfDuplicate.get(words));
+        for (String word : numberOfDuplicate.keySet()) {
+            if (numberOfDuplicate.get(word) > 1) {
+                duplicates.add(numberOfDuplicate.get(word));
             }
         }
+        System.out.println(duplicates);
     }
 
 }
